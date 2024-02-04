@@ -1,0 +1,16 @@
+D:\softuni\asp-fundamentals\Forum-App-SoftUni\ForumApp.Core\bin\Debug\net6.0\ForumApp.Core.deps.json
+D:\softuni\asp-fundamentals\Forum-App-SoftUni\ForumApp.Core\bin\Debug\net6.0\ForumApp.Core.dll
+D:\softuni\asp-fundamentals\Forum-App-SoftUni\ForumApp.Core\bin\Debug\net6.0\ForumApp.Core.pdb
+D:\softuni\asp-fundamentals\Forum-App-SoftUni\ForumApp.Core\bin\Debug\net6.0\ForumApp.Infrastructure.dll
+D:\softuni\asp-fundamentals\Forum-App-SoftUni\ForumApp.Core\bin\Debug\net6.0\ForumApp.Infrastructure.pdb
+D:\softuni\asp-fundamentals\Forum-App-SoftUni\ForumApp.Core\obj\Debug\net6.0\ForumApp.Core.csproj.AssemblyReference.cache
+D:\softuni\asp-fundamentals\Forum-App-SoftUni\ForumApp.Core\obj\Debug\net6.0\ForumApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\softuni\asp-fundamentals\Forum-App-SoftUni\ForumApp.Core\obj\Debug\net6.0\ForumApp.Core.AssemblyInfoInputs.cache
+D:\softuni\asp-fundamentals\Forum-App-SoftUni\ForumApp.Core\obj\Debug\net6.0\ForumApp.Core.AssemblyInfo.cs
+D:\softuni\asp-fundamentals\Forum-App-SoftUni\ForumApp.Core\obj\Debug\net6.0\ForumApp.Core.csproj.CoreCompileInputs.cache
+D:\softuni\asp-fundamentals\Forum-App-SoftUni\ForumApp.Core\obj\Debug\net6.0\ForumApp.Core.sourcelink.json
+D:\softuni\asp-fundamentals\Forum-App-SoftUni\ForumApp.Core\obj\Debug\net6.0\ForumApp.Core.csproj.CopyComplete
+D:\softuni\asp-fundamentals\Forum-App-SoftUni\ForumApp.Core\obj\Debug\net6.0\ForumApp.Core.dll
+D:\softuni\asp-fundamentals\Forum-App-SoftUni\ForumApp.Core\obj\Debug\net6.0\refint\ForumApp.Core.dll
+D:\softuni\asp-fundamentals\Forum-App-SoftUni\ForumApp.Core\obj\Debug\net6.0\ForumApp.Core.pdb
+D:\softuni\asp-fundamentals\Forum-App-SoftUni\ForumApp.Core\obj\Debug\net6.0\ref\ForumApp.Core.dll
