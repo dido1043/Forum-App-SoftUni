@@ -12,6 +12,12 @@ namespace ForumApp.Infrastructure.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder
+                .Entity<Post>()
+                .HasData(
+                new Post() {Id =1, Title ="Post1", Content ="Random post1"},
+                new Post() { Id = 2, Title = "Post2", Content = "Random post2" },
+                new Post() { Id = 3, Title = "Post3", Content = "Random post3" });
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<Post> Posts { get; set; }
