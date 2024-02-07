@@ -25,23 +25,38 @@ namespace ForumApp.Controllers
         }
         [HttpPost]
         public async Task<IActionResult> Add(PostViewModel model)
-        { 
+        {
+            if (model == null)
+            {
+                throw new ArgumentException("Error");
+            }
             await _formService.AddPostAsync(model);
             return RedirectToAction(nameof(Index));
         }
 
         [HttpGet]
-        public async Task<IActionResult> Edit()
+        public async Task<IActionResult> Edit(int id)
         {
-            return View();
+            var model = await _formService.GetById(id);
+            return View(model);
         }
-        //todo create post method
+        [HttpPost]
+        public async Task<IActionResult> Edit(PostViewModel model, int id)
+        {
+            if (ModelState.IsValid == false || model.Id != id)
+            {
+                return View(model);
+            }
+            await _formService.UpdatePostAsync(model);
+            return RedirectToAction(nameof(Index));
+        }
 
-        [HttpGet]
-        public async Task<IActionResult> Delete()
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
         {
-            return View();
+
+            await _formService.DeletePostAsync(id);
+            return RedirectToAction(nameof(Index));
         }
-        //todo create post method
     }
 }

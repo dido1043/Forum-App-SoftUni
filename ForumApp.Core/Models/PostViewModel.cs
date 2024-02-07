@@ -4,6 +4,7 @@ namespace ForumApp.Core.Models
 {
     public class PostViewModel
     {
+        [Key]
         public int Id { get; set; }
         [Required]
         public string Title { get; set; } = null!;

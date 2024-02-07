@@ -3,11 +3,6 @@ using ForumApp.Core.Models;
 using ForumApp.Infrastructure.Data;
 using ForumApp.Infrastructure.Data.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ForumApp.Core.Services
 {
@@ -49,7 +44,7 @@ namespace ForumApp.Core.Services
         {
             return await _context.Posts
                 .AsNoTracking()
-                .Select(p => new PostViewModel {Title = p.Title, Content = p.Content})
+                .Select(p => new PostViewModel {Id =p.Id, Title = p.Title, Content = p.Content})
                 .ToListAsync();
         }
 
@@ -60,7 +55,7 @@ namespace ForumApp.Core.Services
             {
                 throw new ArgumentException("Invalid post.");
             }
-            return new PostViewModel() { Title = entity.Title, Content = entity.Content};
+            return new PostViewModel() {Id= entity.Id, Title = entity.Title, Content = entity.Content};
         }
 
         public async Task UpdatePostAsync(PostViewModel model)
