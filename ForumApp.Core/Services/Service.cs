@@ -1,6 +1,7 @@
 ﻿using ForumApp.Core.Contracts;
 using ForumApp.Core.Models;
 using ForumApp.Infrastructure.Data;
+using ForumApp.Infrastructure.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -17,14 +18,31 @@ namespace ForumApp.Core.Services
         {
             _context = context;  
         }
-        public Task AddPostAsync(PostViewModel model)
+        public async Task AddPostAsync(PostViewModel model)
         {
-            throw new NotImplementedException();
+            if (model == null)
+            {
+                throw new ArgumentException("Invalid post.");
+            }
+            var post = new Post() 
+            {
+                Title = model.Title,
+                Content = model.Content,
+            };
+            await _context.Posts.AddAsync(post);
+            _context.SaveChangesAsync();
         }
 
-        public Task DeletePostAsync(int id)
+        public async Task DeletePostAsync(int id)
         {
-            throw new NotImplementedException();
+            var entity = await _context.Posts.FindAsync(id);
+            if (entity == null)
+            {
+                throw new ArgumentException("Invalid post.");
+            }
+
+            _context.Posts.Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<PostViewModel>> GetAllAsync()
@@ -40,14 +58,24 @@ namespace ForumApp.Core.Services
             var entity = await _context.Posts.FindAsync(id);
             if (entity == null)
             {
-                throw new ArgumentException("Error!");
+                throw new ArgumentException("Invalid post.");
             }
             return new PostViewModel() { Title = entity.Title, Content = entity.Content};
         }
 
-        public Task UpdatePostAsync(PostViewModel model)
+        public async Task UpdatePostAsync(PostViewModel model)
         {
-            throw new NotImplementedException();
+            var entity = await _context.Posts.FindAsync(model.Id);
+
+            if (entity == null)
+            {
+                throw new ArgumentException("Invalid post.");
+            }
+            
+            entity.Title = model.Title;
+            entity.Content = model.Content;
+
+            await _context.SaveChangesAsync();
         }
     }
 }
